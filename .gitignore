@@ -19,5 +19,6 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
-
+/public/files/bootstrap-4.0.0
+/public/files/fontawesome-free-6.6.0-web
 .vercel
