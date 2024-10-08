@@ -1,0 +1,143 @@
+/* ! Global */
+:root {
+    --body-bg: #4b6aa0;
+    --content-bg: rgba(22, 34, 55, 0.466);
+    --text-color: #bfc3c8;
+    --text-color-active: rgb(239 239 239);
+    --plane-shadow: rgba(0, 255, 255, 0.644);
+    --content-border: white;
+    --anchor-color: aqua;
+    --nav-shadow: white;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to right, var(--body-bg), #6d8bc0);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ! Header */
+.header {
+    position: fixed;
+    top: 5vh;
+    margin-left: 19vw;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color-active);
+}
+.header header {
+    width: 75vw;
+    background-color: var(--content-bg);
+    border-radius: 20px 20px 0px 0px;
+    border: 1px solid whitesmoke;
+    backdrop-filter: blur(10px);
+}
+
+/* ! Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--content-bg);
+    width: 20vw;
+    height: 100vh;
+}
+nav .topNav {
+    color: var(--text-color-active);
+    border-bottom: 1px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 8vh;
+}
+nav .topNav svg {
+    font-size: 70px;
+    filter: drop-shadow(0px 0px 10px var(--plane-shadow));
+}
+nav .bottomNav {
+    font-size: large;
+    margin-left: 2vw;
+}
+nav .bottomNav a {
+    text-decoration: none;
+}
+nav .bottomNav a p {
+    cursor: pointer;
+    margin-top: 3vw;
+    transition: all 0.2s ease-out;
+    color: var(--text-color);
+}
+nav .bottomNav a p:hover {
+    color: var(--text-color-active);
+}
+nav .bottomNav p.navActive {
+    color: white;
+    text-shadow: 0px 0px 10px var(--nav-shadow);
+    scale: 1.1;
+    margin-left: 1.3vw;
+}
+
+/* ! Main */
+main {
+    width: 80vw;
+    margin-left: 19vw;
+    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main .wrapperTable {
+    background-color: var(--content-bg);
+    width: 75vw;
+    color: white;
+    /* position: fixed;
+  top: 20vh; */
+}
+.cTable {
+    overflow-y: auto;
+    height: 75vh;
+}
+.main .wrapperTable table {
+    border-color: var(--content-border);
+}
+.sticky {
+    position: sticky;
+    top: 0;
+    background-color: rgba(22, 34, 55, 0.5);
+    backdrop-filter: blur(20px);
+    z-index: 2;
+}
+.panorama {
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+}
+.cTable table {
+    width: 100%;
+}
+.cTable table tr th {
+    font-size: larger;
+}
+
+/* ! Tabel Beli */
+.beli table tr td:first-child,
+.durasi table tr td:first-child {
+    width: 40px;
+    text-align: center;
+}
+.beli table tr td a {
+    color: var(--anchor-color);
+    transition: all 0.3s ease-out;
+}
+.beli table tr td a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
