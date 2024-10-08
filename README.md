@@ -6,7 +6,7 @@
 
 ## 1. Deskripsi Singkat Saya
 
-Hello guys, saya alief ibnu. Saya adalah siswa SMK 7 yang memiliki minat dan bakat di bidang pengembangan perangkat lunak dan game. Saya sedang mengembangkan aplikasi traveling menggunakan Laravel sebagai bagian dari tugas dan proyek saya.
+Hello guys, saya Alief Ibnu H. Saya adalah siswa SMK Negri 7 Batam yang memiliki minat dan bakat di bidang pengembangan perangkat lunak dan game. Saya sedang mengembangkan aplikasi traveling menggunakan Laravel sebagai bagian dari tugas dan proyek saya.
 
 ## 2. Deskripsi Project Ini
 
@@ -18,7 +18,7 @@ Platform ini memungkinkan pengguna untuk mencari dan menjelajahi destinasi wisat
 
 ## 4. Sponsor Saya
 
-Saya di semangati oleh seseorang yang sangat saya cintai. Saya berharap proyek ini bisa menjadi sukses dan membawa kemudahan bagi orang-orang yang menggunakan project ini.
+Saya di semangati oleh seseorang yang sangat saya cintai. Saya berharap proyek ini bisa menjadi sukses dan membawa kemudahan bagi siapapun yang menggunakan project ini.
 
 ## 5. Tech Stack
 
