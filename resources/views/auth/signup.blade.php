@@ -23,7 +23,7 @@
             <h1>Welcome Traveler's!</h1>
           </div>
           @if ($errors->any())
-            <div class="error-invalid">
+            <div class="alert error-invalid">
               <ul>
                 @foreach ($errors->all() as $error)
                   <li>{{ $error }}</li>
@@ -31,7 +31,7 @@
               </ul>
             </div>
           @endif
-          <form action="{{ route('user_store') }}" method="post">
+          <form action="{{ route('signup.store') }}" method="post">
             @csrf
             <div class="field @error('name') is-invalid @enderror" id="fieldname">
               <label for="name"><i class="bi bi-person-vcard-fill"></i></label>
