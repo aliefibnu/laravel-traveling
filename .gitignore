@@ -22,3 +22,5 @@ yarn-error.log
 /public/files/bootstrap-4.0.0
 /public/files/fontawesome-free-6.6.0-web
 .vercel
+vercel.json
+/api
