@@ -7,6 +7,7 @@ use App\Models\ModelDurasi;
 use App\Models\ModelHargaTiket;
 use App\Models\ModelMaskapai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -61,8 +62,9 @@ class IndexController extends Controller
     }
     public function beli_tiket_belum_dibuat($id)
     {
-        $namaMaskapai  = ModelMaskapai::findOrFail($id)->nama_maskapai;
-        return view('beli_tiket', ['namaMaskapai' => $namaMaskapai]);
+        $maskapai  = ModelMaskapai::findOrFail($id);
+        $user = Auth::user();
+        return view('beli_tiket', ['maskapai' => $maskapai]);
     }
     public function beli_tiket_store(Request $request)
     {

@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="{{ asset('files/css/index.css') }}" />
     <script src="{{ asset('files/js/function.js') }}"></script>
     <script src="{{ asset('files/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('files/animate-css/animate.min.css') }}" />
+    <script src="{{ asset('files/wow/wow.min.js') }}"></script>
+
+    <script>
+      new WOW().init()
+    </script>
   </head>
 
   <body>
@@ -32,13 +37,13 @@
       <div class="content c2" id="detail">
         <div class="left-top">
           <div class="wrapper">
-            <div class="mediaImgSelengkapnya"></div>
+            <div class="mediaImgSelengkapnya wow animate__animated animate__fadeInLeft"></div>
             <h1 class="deskripsi">City Landscape</h1>
           </div>
         </div>
         <div class="right-bottom">
           <h2>Tentang NYC</h2>
-          <p>
+          <p class="wow animate__animated animate__fadeInRight">
             New York City, pusat energi global yang tak pernah tidur, menawarkan
             pengalaman yang tak terlupakan bagi setiap pengunjungnya. Dari
             gemerlap Times Square, landmark ikonik seperti Patung Liberty dan
@@ -51,7 +56,8 @@
             dipenuhi dengan petualangan baru.
           </p>
           <div class="buttons">
-            <a href={{ route('tiket_pesawat') }} target="_blank" class="button">Cek Tiket Pesawat <i
+            <a href={{ route('tiket_pesawat') }} target="_blank"
+              class="button wow animate__animated animate__fadeInBottom">Cek Tiket Pesawat <i
                 class="fas fa-plane"></i></a>
           </div>
         </div>

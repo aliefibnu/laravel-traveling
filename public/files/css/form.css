@@ -1,6 +1,6 @@
 /* ! Global */
 :root {
-    --left-bg: white;
+    --left-bg: rgb(43 45 93);
     --right-bg: rgb(96 48 218);
     --font: Arial, Helvetica, sans-serif;
     --field-color: black;
@@ -52,7 +52,7 @@ main .right {
 }
 
 .wrapperForm {
-    width: 70%;
+    /* width: 70%; */
     height: 70%;
     display: flex;
     transition: all ease-out 0.3s;
@@ -74,7 +74,7 @@ main .right {
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .wrapperForm form .field:nth-child(2) {
     margin-top: 0px;
@@ -90,6 +90,7 @@ main .right {
 .wrapperForm form .field input,
 .wrapperForm form .field textarea,
 .wrapperForm form .field select {
+    background-color: var(--);
     color: var(--field-color);
     margin-left: 10px;
     border: none;
@@ -124,11 +125,11 @@ main .right {
     width: 50%;
 } */
 .wrapperFields .field:nth-child(2) {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     margin-left: 20px;
     width: 30%;
 }
-.wrapperFields:nth-of-type(3) .field:nth-child(2) {
+.wrapperFields:nth-of-type(4) .field:nth-child(2) {
     width: 40% !important;
 }
 .wrapperForm form .info {

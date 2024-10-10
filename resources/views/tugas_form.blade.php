@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Beli Tiket {{ $maskapai->nama_maskapai }}</title>
+    <title>Beli Tiket {{ $namaMaskapai }}</title>
     <link rel="stylesheet" href="{{ asset('files/css/form.css') }}">
     <script src="{{ asset('files/js/form.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('files/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
@@ -22,7 +22,7 @@
         <div class="wrapperForm">
           @if (!$errors->any())
             <div class="header">
-              <h1>Beli Tiket {{ $maskapai->nama_maskapai }}</h1>
+              <h1>Beli Tiket {{ $namaMaskapai }}</h1>
             </div>
           @endif
           @if ($errors->any())
@@ -36,15 +36,6 @@
           @endif
           <form action="{{ route('beli_tiket_store') }}" method="post">
             @csrf
-            <div class="field @error('id_maskapai') is-invalid @enderror">
-              <label for="id_maskapai"><i class="bi bi-pin-map-fill"></i></label>
-              <select name="id_maskapai" id="id_maskapai">
-                <option value="1" {{ old('id_maskapai') !== '1' ? 'Selected' : '' }}>Etihad Airways</option>
-                <option value="2" {{ old('id_maskapai') !== '2' ? 'Selected' : '' }}>Qatar Airways</option>
-                <option value="3" {{ old('id_maskapai') !== '3' ? 'Selected' : '' }}>Singapore Airlines</option>
-                <option value="4" {{ old('id_maskapai') !== '4' ? 'Selected' : '' }}>Turkish Airlines</option>
-              </select>
-            </div>
             <div class="field @error('name') is-invalid @enderror">
               <label for="name"><i class="bi bi-person-vcard-fill"></i></label>
               <input type="text" name="name" id="name" placeholder="Masukkan Nama"
