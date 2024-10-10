@@ -23,7 +23,7 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($credentials, true)) {
+        if (Auth::attempt($credentials, $request->remember !== null)) {
             $request->session()->regenerate();
             return redirect()->intended('/'); // Ganti dengan halaman yang sesuai
         }
@@ -43,7 +43,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|max:50',
-            'username' => 'required|unique:users,username|alpha_dash',
+            'username' => 'required|unique:users,username|alpha_dash|min:6|max:20',
             'password' => 'required|min:6',
         ]);
 

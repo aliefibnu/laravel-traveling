@@ -2,62 +2,57 @@
 <html lang="en">
 
   <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="{{ asset('files/css/form.css') }}">
+    <title>Daftar !</title>
+    <link rel="stylesheet" href="{{ asset('files/css/login.css') }}">
+    <script src="{{ asset('files/js/login-signup.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('files/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
-    <script src="{{ asset('files/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
   </head>
 
-  <body>
-    <main>
-      <div class="left">
-        <img src="{{ asset('files/img/form/signup.svg') }}" alt="Logo">
-      </div>
-      <div class="right">
-        <div class="wrapperForm">
-          <div class="header">
-            <h1>Welcome Traveler's!</h1>
-          </div>
-          @if ($errors->any())
-            <div class="alert error-invalid">
-              <ul>
-                @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-                @endforeach
-              </ul>
-            </div>
-          @endif
-          <form action="{{ route('signup.store') }}" method="post">
-            @csrf
-            <div class="field @error('name') is-invalid @enderror" id="fieldname">
-              <label for="name"><i class="bi bi-person-vcard-fill"></i></label>
-              <input type="text" name="name" id="name" placeholder="Masukkan Nama"
-                value="{{ old('name') }}" required>
-            </div>
-            <div class="field @error('username') is-invalid @enderror" id="fieldusername">
-              <label for="username"><i class="bi bi-person-circle"></i></label>
-              <input type="text" name="username" id="username" placeholder="Masukkan Username"
-                value="{{ old('username') }}" required>
-            </div>
-            <div class="field @error('password') is-invalid @enderror" id="fieldpassword">
-              <label for="password"><i class="bi bi-person-fill-lock"></i></label>
-              <input type="password" name="password" id="password" placeholder="Masukkan Password" required>
-            </div>
-            <div class="info">
-              Sudah punya akun ?<a href="{{ route('login') }}"> Login Disini</a>
-            </div>
-            <div class="button">
-              <button type="submit">Daftar</button>
-            </div>
-          </form>
+  <body style="background-image: url('{{ asset('files/img/form/vector bg.jpg') }}')">
+    <div class="wrapper">
+      <form action="{{ route('signup.store') }}" method="POST">
+        @csrf
+        <h1>Daftar</h1>
+        <div class="info-group">
+          @error('name')
+            <div class="alert alert-error alert-name">{{ $message }}</div>
+          @enderror
         </div>
-      </div>
-    </main>
-    <script src="{{ asset('files/js/form.js') }}"></script>
+        <div class="input-box input-box-1 input-box-2">
+          <input type="text" placeholder="Nama" name="name" @error('name') class="input-error" @enderror
+            value="{{ old('name') }}" required>
+          <i class="bi bi-person-vcard-fill"></i>
+        </div>
+        <div class="info-group">
+          @error('username')
+            <div class="alert alert-error alert-username">{{ $message }}</div>
+          @enderror
+        </div>
+        <div class="input-box input-box-2">
+          <input type="text" placeholder="Username" name="username" @error('username') class="input-error" @enderror
+            value="{{ old('username') }}" required>
+          <i class="bi bi-person-circle"></i>
+        </div>
+        <div class="info-group">
+          @error('password')
+            <div class="alert alert-error alert-password">{{ $message }}</div>
+          @enderror
+        </div>
+        <div class="input-box input-box-2">
+          <input type="password" placeholder="Password" name="password" @error('password') class="input-error" @enderror
+            required>
+          <i class="bi bi-person-fill-lock"></i>
+        </div>
+
+        <button type="submit" class="btn">Daftar</button>
+        <div class="register-link">
+          <p>Sudah punya akun? <a href="{{ route('login') }}"> Login Disini</a></p>
+        </div>
+      </form>
+    </div>
   </body>
 
 </html>

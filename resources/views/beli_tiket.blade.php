@@ -2,7 +2,6 @@
 <html lang="en">
 
   <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -39,10 +38,11 @@
             <div class="field @error('id_maskapai') is-invalid @enderror">
               <label for="id_maskapai"><i class="bi bi-pin-map-fill"></i></label>
               <select name="id_maskapai" id="id_maskapai">
-                <option value="1" {{ old('id_maskapai') !== '1' ? 'Selected' : '' }}>Etihad Airways</option>
-                <option value="2" {{ old('id_maskapai') !== '2' ? 'Selected' : '' }}>Qatar Airways</option>
-                <option value="3" {{ old('id_maskapai') !== '3' ? 'Selected' : '' }}>Singapore Airlines</option>
-                <option value="4" {{ old('id_maskapai') !== '4' ? 'Selected' : '' }}>Turkish Airlines</option>
+                <option value="1" {{ $maskapai->id_maskapai !== '1' ? 'Selected' : '' }}>Etihad Airways</option>
+                <option value="2" {{ $maskapai->id_maskapai !== '2' ? 'Selected' : '' }}>Qatar Airways</option>
+                <option value="3" {{ $maskapai->id_maskapai !== '3' ? 'Selected' : '' }}>Singapore Airlines
+                </option>
+                <option value="4" {{ $maskapai->id_maskapai !== '4' ? 'Selected' : '' }}>Turkish Airlines</option>
               </select>
             </div>
             <div class="field @error('name') is-invalid @enderror">

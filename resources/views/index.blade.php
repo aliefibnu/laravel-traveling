@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Travel To NYC</title>
     <link rel="stylesheet" href="{{ asset('files/css/index.css') }}" />
     <script src="{{ asset('files/js/function.js') }}"></script>
@@ -37,11 +36,11 @@
       <div class="content c2" id="detail">
         <div class="left-top">
           <div class="wrapper">
-            <div class="mediaImgSelengkapnya wow animate__animated animate__fadeInLeft"></div>
+            <div class="mediaImgSelengkapnya wow animate__animated animate__flipInX"></div>
             <h1 class="deskripsi">City Landscape</h1>
           </div>
         </div>
-        <div class="right-bottom">
+        <div class="right-bottom wow animate__animated animate__fadeInDown">
           <h2>Tentang NYC</h2>
           <p class="wow animate__animated animate__fadeInRight">
             New York City, pusat energi global yang tak pernah tidur, menawarkan
@@ -55,16 +54,15 @@
             ini – tempat di mana mimpi besar menjadi kenyataan dan setiap detik
             dipenuhi dengan petualangan baru.
           </p>
-          <div class="buttons">
-            <a href={{ route('tiket_pesawat') }} target="_blank"
-              class="button wow animate__animated animate__fadeInBottom">Cek Tiket Pesawat <i
+          <div class="buttons wow animate__animated animate__fadeInRight">
+            <a href={{ route('tiket_pesawat') }} target="_blank" class="button">Cek Tiket Pesawat <i
                 class="fas fa-plane"></i></a>
           </div>
         </div>
       </div>
       <div class="content c3" id="destinasi">
         <div class="left-top">
-          <div class="slider" id="slider">
+          <div class="slider wow animate__animated animate__fadeInLeft" id="slider">
             <div class="wrapper">
               <img loading="lazy" src="{{ asset('files/img/index/city-landscape1.webp') }}" alt="CityLandscape"
                 class="slidesImg" />
@@ -96,46 +94,46 @@
           <div class="wrapperRb">
             <h2>Ada Apa Saja Di NYC?</h2>
             <ul>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 <b>Museum Seni Metropolitan (Met):</b> Rumah bagi seni klasik
                 hingga kontemporer dari seluruh dunia.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 <b>High Line:</b> Taman yang unik, terletak di jalur rel bekas
                 dengan pemandangan indah kota.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 <b>Belanja di Fifth Avenue:</b> Temukan butik mewah dan toko
                 brand ternama.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 <b>Brooklyn Bridge:</b> Jalan kaki melintasi jembatan ini untuk
                 pemandangan menakjubkan Manhattan.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 <b>Distrik SoHo:</b> Tempat yang sempurna untuk belanja, kafe,
                 dan galeri seni.
               </li>
             </ul>
             <h2>Saran Agenda</h2>
             <ol>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 Kunjungi Patung Liberty dan nikmati pemandangan ikonik dari
                 pelabuhan New York.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 Jelajahi Empire State Building dan nikmati panorama menakjubkan
                 dari puncak gedung.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 Berjalan-jalan di Central Park, oase hijau di tengah hiruk-pikuk
                 kota.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 Saksikan pertunjukan Broadway yang memukau di distrik teater
                 terbaik dunia.
               </li>
-              <li>
+              <li class=" wow animate__animated animate__fadeInRight">
                 Nikmati kuliner di Times Square yang selalu hidup, siang dan
                 malam.
               </li>
@@ -143,13 +141,15 @@
           </div>
         </div>
       </div>
-      <div class="content c4 video" id="video">
-        <div class="wrapper">
-          <br /><br /><br />
-          <video id="pauseEffect" controls src="./files/video/Cinematic Video1.mp4"></video>
-          <h1>The NYC</h1>
+      <div class="slider " id="slider">
+        <div class="content c4 video " id="video">
+          <div class="wrapper">
+            <br /><br /><br />
+            <video id="pauseEffect" class="wow animate__animated animate__bounceInLeft" controls
+              src="./files/video/Cinematic Video1.mp4"></video>
+            <h1>The NYC</h1>
+          </div>
         </div>
-      </div>
     </main>
     <script src="./files/js/index.js"></script>
   </body>
