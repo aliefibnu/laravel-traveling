@@ -43,7 +43,7 @@
                 Beli Tiket
               </a>
               <a
-                onclick="return swal_confirm('Anda yakin ingin keluar?','', 'error').then(act=>{act?window.location='{{ route('logout_get') }}':''})">
+                onclick="return swal_confirm('Anda yakin ingin keluar?','', 'error').then(act=>{act.isConfirmed?window.location='{{ route('logout_get') }}':''})">
                 <i class="bi bi-box-arrow-left"></i>
                 Logout
               </a>
@@ -101,7 +101,7 @@
           </p>
           <div class="buttons wow animate__animated animate__fadeInRight">
             <a href={{ route('tiket_pesawat') }} target="_blank" class="button">Cek Tiket Pesawat <i
-                class="fas fa-plane"></i></a>
+                class="bi bi-airplane-fill"></i></a>
           </div>
         </div>
       </div>
