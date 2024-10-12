@@ -39,6 +39,11 @@ class AuthController extends Controller
         return view('auth.signup');
     }
 
+    public function lupa_password()
+    {
+        return view('auth.lupa_password');
+    }
+
     public function signUp(Request $request)
     {
         $request->validate([

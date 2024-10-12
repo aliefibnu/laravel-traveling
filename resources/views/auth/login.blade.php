@@ -40,7 +40,7 @@
             <input type="checkbox" name="remember">
             Remember me
           </label>
-          <a href="#">Lupa password?</a>
+          <a href="{{ route('lupa_password') }}">Lupa password?</a>
         </div>
         <button type="submit" class="btn">Login</button>
         <div class="register-link">

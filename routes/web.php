@@ -20,6 +20,8 @@ Route::post('/beli_tiket', [IndexController::class, 'beli_tiket_store'])->name('
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('login', [AuthController::class, 'login'])->name('login.store');
 
+Route::get('/lupa_passsword', [AuthController::class, 'lupa_password'])->name('lupa_password');
+
 Route::get('signup', [AuthController::class, 'showSignUpForm'])->name('signup')->middleware('guest');
 Route::post('signup', [AuthController::class, 'signUp'])->name('signup.store');
 
