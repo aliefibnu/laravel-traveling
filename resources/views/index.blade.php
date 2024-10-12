@@ -1,5 +1,3 @@
-{{-- @dd($maskapai) --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Travel To NYC</title>
     <link rel="stylesheet" href="{{ asset('files/css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('files/lib/animate-css/animate.min.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('files/js/function.js') }}"></script>
     <script src="{{ asset('files/lib/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('files/lib/animate-css/animate.min.css') }}" />
     <script src="{{ asset('files/lib/wow/wow.min.js') }}"></script>
-    <script src="{{ asset('files/lib/sweet-alert/sweetalert2.js') }}"></script>
+    <script src="{{ asset('files/js/alert.js') }}"></script>
+    <script src="js/sweetalert2.js"></script>
     <script>
       new WOW().init()
     </script>
@@ -40,7 +41,8 @@
                 <i class="fa-solid fa-cart-shopping"></i>
                 Beli Tiket
               </a>
-              <a href="{{ route('logout_get') }}">
+              <a
+                onclick="return swal_confirm('Anda yakin ingin keluar?','', 'error').then(act=>{act?window.location='{{ route('logout_get') }}':''})">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Logout
               </a>

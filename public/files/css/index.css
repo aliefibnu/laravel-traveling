@@ -16,6 +16,7 @@ a:hover,
 .dropdown .dropbtn:hover {
     text-decoration: underline;
     color: white;
+    cursor: pointer;
 }
 .hidden {
     opacity: 0;
