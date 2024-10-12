@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{{ asset('files/css/index.css') }}" />
     <link rel="stylesheet" href="{{ asset('files/lib/animate-css/animate.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="{{ asset('files/lib/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('files/js/function.js') }}"></script>
-    <script src="{{ asset('files/lib/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
     <script src="{{ asset('files/lib/wow/wow.min.js') }}"></script>
     <script src="{{ asset('files/js/alert.js') }}"></script>
     <script src="js/sweetalert2.js"></script>
@@ -32,35 +32,39 @@
         <h3><a href="#video">Video</a></h3>
         @if (Auth::check())
           <div class="dropdown">
-            <button class="dropbtn" id="dropbtn" onclick="myFunction()">
-              <i id="dropbtn" class="fa-regular fa-user"></i>
-              <h3 id="dropbtn">{{ Str::limit(Auth::user()->name, 7, '...') }}</h3>
-            </button>
+            <div class="dropbtn" id="dropbtn" onclick="myFunction()">
+              <h3 id="dropbtn">
+                <i id="dropbtn" class="bi bi-person-circle"></i>
+                {{ Str::limit(Auth::user()->name, 7, '...') }}
+              </h3>
+            </div>
             <div class="dropdown-content" id="myDropdown">
               <a href="{{ route('tiket_pesawat_show', 3) }}">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="bi bi-cart-plus-fill"></i>
                 Beli Tiket
               </a>
               <a
                 onclick="return swal_confirm('Anda yakin ingin keluar?','', 'error').then(act=>{act?window.location='{{ route('logout_get') }}':''})">
-                <i class="fa-solid fa-right-from-bracket"></i>
+                <i class="bi bi-box-arrow-left"></i>
                 Logout
               </a>
             </div>
           </div>
         @else
           <div class="dropdown">
-            <button class="dropbtn" id="dropbtn" onclick="myFunction()">
-              <i id="dropbtn" class="fa-solid fa-angles-down"></i>
-              <h3 id="dropbtn">Masuk</h3>
-            </button>
+            <div class="dropbtn" id="dropbtn" onclick="myFunction()">
+              <h3 id="dropbtn">
+                <i id="dropbtn" class="bi bi-chevron-double-down"></i>
+                Masuk
+              </h3>
+            </div>
             <div class="dropdown-content" id="myDropdown">
               <a href="{{ route('login') }}">
-                <i class="fa-solid fa-right-to-bracket"></i>
+                <i class="bi bi-person-circle"></i>
                 Login
               </a>
               <a href="{{ route('signup') }}">
-                <i class="fa-solid fa-user-plus"></i>
+                <i class="bi bi-person-plus-fill"></i>
                 Daftar
               </a>
             </div>
@@ -79,11 +83,11 @@
         <div class="left-top">
           <div class="wrapper">
             <div class="mediaImgSelengkapnya wow animate__animated animate__flipInX"></div>
-            <h1 class="deskripsi">City Landscape</h1>
+            <h3 class="deskripsi">City Landscape</h3>
           </div>
         </div>
         <div class="right-bottom wow animate__animated animate__fadeInDown">
-          <h2>Tentang NYC</h2>
+          <h1>Tentang NYC</h1>
           <p class="wow animate__animated animate__fadeInRight">
             New York City, pusat energi global yang tak pernah tidur, menawarkan
             pengalaman yang tak terlupakan bagi setiap pengunjungnya. Dari
@@ -108,27 +112,27 @@
             <div class="wrapper">
               <img loading="lazy" src="{{ asset('files/img/index/city-landscape1.webp') }}" alt="CityLandscape"
                 class="slidesImg" />
-              <h3 class="deskripsi">City Landscape</h3>
+              <h5 class="deskripsi">City Landscape</h5>
             </div>
             <div class="wrapper">
               <img loading="lazy" src="./files/img/index/liberty.webp" alt="Liberty" class="slidesImg" />
-              <h3 class="deskripsi">Patung Liberty</h3>
+              <h5 class="deskripsi">Patung Liberty</h5>
             </div>
             <div class="wrapper">
               <img loading="lazy" src="./files/img/index/empire-state2.webp" alt="EmpireState" class="slidesImg" />
-              <h3 class="deskripsi">Empire State Of Building</h3>
+              <h5 class="deskripsi">Empire State Of Building</h5>
             </div>
             <div class="wrapper">
               <img loading="lazy" src="./files/img/index/central-park.webp" alt="Central Park" class="slidesImg" />
-              <h3 class="deskripsi">Central Park</h3>
+              <h5 class="deskripsi">Central Park</h5>
             </div>
             <div class="wrapper">
               <img loading="lazy" src="./files/img/index/broadway.webp" alt="BroadWay" class="slidesImg" />
-              <h3 class="deskripsi">BroadWay</h3>
+              <h5 class="deskripsi">BroadWay</h5>
             </div>
             <div class="wrapper">
               <img loading="lazy" src="./files/img/index/times-square.webp" alt="TimesSquare" class="slidesImg" />
-              <h3 class="deskripsi">TImes Square</h3>
+              <h5 class="deskripsi">Times Square</h5>
             </div>
           </div>
         </div>

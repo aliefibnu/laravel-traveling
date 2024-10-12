@@ -3,14 +3,32 @@
     --background-color: #162237;
     --text-color: #bfc3c8;
 }
+@font-face {
+    font-family: "Helios Extended"; /* Ganti dengan nama font yang Anda inginkan */
+    src: url("../fonts/heliosext/HeliosExt.otf") format("opentype"); /* Ganti dengan path ke file OTF Anda */
+}
+@font-face {
+    font-family: "League Spartan"; /* Ganti dengan nama font yang Anda inginkan */
+    src: url("../fonts/league-spartan/LeagueSpartan-Bold.otf")
+        format("opentype"); /* Ganti dengan path ke file OTF Anda */
+}
+
 html {
     scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "League Spartan";
 }
 a {
     text-decoration: none;
     color: rgba(245, 245, 245, 0.774);
-    font-family: sans-serif;
     transition: all linear 0.3s;
+    font-family: "Helios Extended";
 }
 a:hover,
 .dropdown .dropbtn:hover {
@@ -126,9 +144,6 @@ header .right {
     flex-direction: row;
     align-items: center;
 }
-.dropdown .dropbtn h3 {
-    margin-left: 5px;
-}
 
 .dropdown-content {
     display: none;
@@ -203,8 +218,9 @@ video.bg_home {
     margin-top: -5%;
 }
 .c2 .right-bottom p {
-    font-size: larger;
+    margin-bottom: 5%;
     width: 40vw;
+    font-family: "Helios Extended";
     text-align: justify;
 }
 .button {
@@ -250,7 +266,7 @@ video.bg_home {
     pointer-events: none;
 }
 
-.slider .wrapper h3 {
+.slider .wrapper h5 {
     text-align: center;
 }
 
@@ -286,7 +302,7 @@ video.bg_home {
 .video .wrapper video:hover {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.863);
 }
-.video .wrapper h2 {
+.video .wrapper h1 {
     color: white;
     font-size: 2rem;
     margin-bottom: 20px;
