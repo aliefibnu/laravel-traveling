@@ -8,7 +8,7 @@
     <title>Daftar !</title>
     <link rel="stylesheet" href="{{ asset('files/css/login.css') }}">
     <script src="{{ asset('files/js/login-signup.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('files/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('files/lib/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
   </head>
 
   <body style="background-image: url('{{ asset('files/img/form/vector bg.jpg') }}')">

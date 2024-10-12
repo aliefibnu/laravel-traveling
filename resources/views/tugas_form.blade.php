@@ -8,8 +8,8 @@
     <title>Beli Tiket {{ $namaMaskapai }}</title>
     <link rel="stylesheet" href="{{ asset('files/css/form.css') }}">
     <script src="{{ asset('files/js/form.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('files/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
-    <script src="{{ asset('files/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('files/lib/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <script src="{{ asset('files/lib/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
   </head>
 
   <body>

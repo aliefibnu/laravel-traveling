@@ -10,10 +10,10 @@
     <title>Travel To NYC</title>
     <link rel="stylesheet" href="{{ asset('files/css/index.css') }}" />
     <script src="{{ asset('files/js/function.js') }}"></script>
-    <script src="{{ asset('files/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('files/animate-css/animate.min.css') }}" />
-    <script src="{{ asset('files/wow/wow.min.js') }}"></script>
-
+    <script src="{{ asset('files/lib/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('files/lib/animate-css/animate.min.css') }}" />
+    <script src="{{ asset('files/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('files/lib/sweet-alert/sweetalert2.js') }}"></script>
     <script>
       new WOW().init()
     </script>
@@ -21,10 +21,50 @@
 
   <body>
     <header>
-      <h3><a href="#home" id="anchor1" onclick="updateSizeJudul()">Home</a></h3>
-      <h3><a href="#detail">Detail</a></h3>
-      <h3><a href="#destinasi">Destinasi</a></h3>
-      <h3><a href="#video">Video</a></h3>
+      <div class="left">
+        <img src="{{ asset('files/img/logo.svg') }}" alt="Logo">
+      </div>
+      <div class="right">
+        <h3><a href="#home" id="anchor1" onclick="updateSizeJudul()">Home</a></h3>
+        <h3><a href="#detail">Detail</a></h3>
+        <h3><a href="#destinasi">Destinasi</a></h3>
+        <h3><a href="#video">Video</a></h3>
+        @if (Auth::check())
+          <div class="dropdown">
+            <button class="dropbtn" id="dropbtn" onclick="myFunction()">
+              <i id="dropbtn" class="fa-regular fa-user"></i>
+              <h3 id="dropbtn">{{ Str::limit(Auth::user()->name, 7, '...') }}</h3>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="{{ route('tiket_pesawat_show', 3) }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Beli Tiket
+              </a>
+              <a href="{{ route('logout_get') }}">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+        @else
+          <div class="dropdown">
+            <button class="dropbtn" id="dropbtn" onclick="myFunction()">
+              <i id="dropbtn" class="fa-solid fa-angles-down"></i>
+              <h3 id="dropbtn">Masuk</h3>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a href="{{ route('login') }}">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+              </a>
+              <a href="{{ route('signup') }}">
+                <i class="fa-solid fa-user-plus"></i>
+                Daftar
+              </a>
+            </div>
+          </div>
+        @endif
+      </div>
     </header>
     <main>
       <div class="content c1" id="home">

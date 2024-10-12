@@ -1,6 +1,6 @@
 <div class="topNav">
   <i class="fas fa-plane"></i>
-  <h2>Hello, Traveler's !</h2>
+  <h2>Hello, {{ Auth::user()->name ?? 'Traveler\'s' }} !</h2>
 </div>
 <div class="bottomNav" id="navigation">
   <a href="{{ route('tiket_pesawat_show', 1) }}">

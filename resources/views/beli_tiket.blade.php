@@ -8,8 +8,8 @@
     <title>Beli Tiket {{ $maskapai->nama_maskapai }}</title>
     <link rel="stylesheet" href="{{ asset('files/css/form.css') }}">
     <script src="{{ asset('files/js/form.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('files/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
-    <script src="{{ asset('files/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('files/lib/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
+    <script src="{{ asset('files/lib/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
   </head>
 
   <body>
@@ -38,17 +38,17 @@
             <div class="field @error('id_maskapai') is-invalid @enderror">
               <label for="id_maskapai"><i class="bi bi-pin-map-fill"></i></label>
               <select name="id_maskapai" id="id_maskapai">
-                <option value="1" {{ $maskapai->id_maskapai !== '1' ? 'Selected' : '' }}>Etihad Airways</option>
-                <option value="2" {{ $maskapai->id_maskapai !== '2' ? 'Selected' : '' }}>Qatar Airways</option>
-                <option value="3" {{ $maskapai->id_maskapai !== '3' ? 'Selected' : '' }}>Singapore Airlines
+                <option value="1" {{ $maskapai->id_maskapai == 1 ? 'Selected' : '' }}>Etihad Airways</option>
+                <option value="2" {{ $maskapai->id_maskapai == 2 ? 'Selected' : '' }}>Qatar Airways</option>
+                <option value="3" {{ $maskapai->id_maskapai == 3 ? 'Selected' : '' }}>Singapore Airlines
                 </option>
-                <option value="4" {{ $maskapai->id_maskapai !== '4' ? 'Selected' : '' }}>Turkish Airlines</option>
+                <option value="4" {{ $maskapai->id_maskapai == 4 ? 'Selected' : '' }}>Turkish Airlines</option>
               </select>
             </div>
             <div class="field @error('name') is-invalid @enderror">
               <label for="name"><i class="bi bi-person-vcard-fill"></i></label>
               <input type="text" name="name" id="name" placeholder="Masukkan Nama"
-                value="{{ old('name') }}" required>
+                value="{{ old('name') ?? Auth::user()->name }}" required>
             </div>
             <div class="wrapperFields">
               <div class="field @error('tempat_lahir') is-invalid @enderror">

@@ -12,7 +12,8 @@ a {
     font-family: sans-serif;
     transition: all linear 0.3s;
 }
-a:hover {
+a:hover,
+.dropdown .dropbtn:hover {
     text-decoration: underline;
     color: white;
 }
@@ -79,19 +80,80 @@ header {
     top: 0;
     display: flex;
     flex-direction: row;
-    width: 50vw;
-    justify-content: space-evenly;
+    width: 100vw;
+    justify-content: space-between;
     left: 25vw;
-    border-radius: 0px 0px 20px 20px;
+    /* border-radius: 0px 0px 20px 20px; */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.541);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 header:hover {
     opacity: 1;
+}
+header .left,
+header .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+header .left {
+    width: 30vw;
+}
+header .right {
+    width: 65vw;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dropdown .dropbtn h3 {
+    margin-left: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    filter: drop-shadow(0 0 10px black);
+    z-index: 1;
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
 }
 /* ! Home / Landing screen Css Rule */
 #home {
