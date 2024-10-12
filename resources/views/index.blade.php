@@ -14,7 +14,6 @@
     <script src="{{ asset('files/js/function.js') }}"></script>
     <script src="{{ asset('files/lib/wow/wow.min.js') }}"></script>
     <script src="{{ asset('files/js/alert.js') }}"></script>
-    <script src="js/sweetalert2.js"></script>
     <script>
       new WOW().init()
     </script>
