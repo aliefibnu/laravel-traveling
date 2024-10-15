@@ -12,9 +12,9 @@ Route::get('/tiket_pesawat', [IndexController::class, 'tiket_pesawat'])->name('t
 Route::get('/tiket_pesawat/{id}', [IndexController::class, 'tiket_pesawat_show'])->name('tiket_pesawat_show');
 
 Route::get('/beli_tiket/{id}', [IndexController::class, 'beli_tiket_belum_dibuat'])->name('beli_tiket')->middleware('auth');
+Route::get('/beli_tiket/beta/{id}', [IndexController::class, 'beli_tiket_beta'])->name('beli_tiket_beta')->middleware('auth');
 
 Route::post('/beli_tiket', [IndexController::class, 'beli_tiket_store'])->name('beli_tiket_store');
-
 
 //? Route Auth
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');

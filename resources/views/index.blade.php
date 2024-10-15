@@ -34,7 +34,7 @@
             <div class="dropbtn" id="dropbtn" onclick="myFunction()">
               <h3 id="dropbtn">
                 <i id="dropbtn" class="bi bi-person-circle"></i>
-                {{ Str::limit(Auth::user()->name, 7, '...') }}
+                {{ Str::limit(Auth::user()->username, 7, '...') }}
               </h3>
             </div>
             <div class="dropdown-content" id="myDropdown">

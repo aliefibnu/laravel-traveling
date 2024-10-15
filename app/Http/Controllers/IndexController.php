@@ -66,6 +66,11 @@ class IndexController extends Controller
         $user = Auth::user();
         return view('beli_tiket', ['maskapai' => $maskapai]);
     }
+    public function beli_tiket_beta($id)
+    {
+        $maskapai  = ModelMaskapai::findOrFail($id);
+        return view('beli_tiket_beta', ['maskapai' => $maskapai]);
+    }
     public function beli_tiket_store(Request $request)
     {
         $validated = $request->validate([
