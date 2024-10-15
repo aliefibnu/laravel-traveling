@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MaskapaiModel;
 use App\Models\ModelDurasi;
 use App\Models\ModelHargaTiket;
 use App\Models\ModelMaskapai;
