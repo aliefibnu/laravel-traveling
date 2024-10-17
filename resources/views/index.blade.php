@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="content c2" id="detail">
-        <div class="left-top">
+        <div class="left-top content-center">
           <div class="wrapper">
             <div class="mediaImgSelengkapnya wow animate__animated animate__flipInX"></div>
             <h3 class="deskripsi">City Landscape</h3>
@@ -106,95 +106,87 @@
         </div>
       </div>
       <div class="content c3" id="destinasi">
-        <div class="left-top">
-          <div class="slider wow animate__animated animate__fadeInLeft" id="slider">
-            <div class="wrapper">
-              <img loading="lazy" src="{{ asset('files/img/index/city-landscape1.webp') }}" alt="CityLandscape"
-                class="slidesImg" />
-              <h5 class="deskripsi">City Landscape</h5>
+        <div class="c3-center content-center">
+          <div class="card" data-idcard="1">
+            <div class="wrapper-img">
+              <img src="{{ asset('files/img/index/liberty.webp') }}" alt="Liberty">
             </div>
-            <div class="wrapper">
-              <img loading="lazy" src="./files/img/index/liberty.webp" alt="Liberty" class="slidesImg" />
-              <h5 class="deskripsi">Patung Liberty</h5>
+            <div class="title">
+              <h3>Patung Liberty</h3>
             </div>
-            <div class="wrapper">
-              <img loading="lazy" src="./files/img/index/empire-state2.webp" alt="EmpireState" class="slidesImg" />
-              <h5 class="deskripsi">Empire State Of Building</h5>
-            </div>
-            <div class="wrapper">
-              <img loading="lazy" src="./files/img/index/central-park.webp" alt="Central Park" class="slidesImg" />
-              <h5 class="deskripsi">Central Park</h5>
-            </div>
-            <div class="wrapper">
-              <img loading="lazy" src="./files/img/index/broadway.webp" alt="BroadWay" class="slidesImg" />
-              <h5 class="deskripsi">BroadWay</h5>
-            </div>
-            <div class="wrapper">
-              <img loading="lazy" src="./files/img/index/times-square.webp" alt="TimesSquare" class="slidesImg" />
-              <h5 class="deskripsi">Times Square</h5>
+            <div class="desc">
+              <p>Patung Liberty berdiri megah di Pulau Liberty sebagai simbol kebebasan dan harapan. Diberikan oleh
+                Prancis pada tahun 1886, patung ini menawarkan pemandangan indah pelabuhan New York. Pengunjung dapat
+                menjelajahi pulau dan bahkan naik ke mahkota patung untuk menikmati panorama kota.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="right-bottom punchline">
-          <div class="wrapperRb">
-            <h2>Ada Apa Saja Di NYC?</h2>
-            <ul>
-              <li class=" wow animate__animated animate__fadeInRight">
-                <b>Museum Seni Metropolitan (Met):</b> Rumah bagi seni klasik
-                hingga kontemporer dari seluruh dunia.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                <b>High Line:</b> Taman yang unik, terletak di jalur rel bekas
-                dengan pemandangan indah kota.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                <b>Belanja di Fifth Avenue:</b> Temukan butik mewah dan toko
-                brand ternama.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                <b>Brooklyn Bridge:</b> Jalan kaki melintasi jembatan ini untuk
-                pemandangan menakjubkan Manhattan.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                <b>Distrik SoHo:</b> Tempat yang sempurna untuk belanja, kafe,
-                dan galeri seni.
-              </li>
-            </ul>
-            <h2>Saran Agenda</h2>
-            <ol>
-              <li class=" wow animate__animated animate__fadeInRight">
-                Kunjungi Patung Liberty dan nikmati pemandangan ikonik dari
-                pelabuhan New York.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                Jelajahi Empire State Building dan nikmati panorama menakjubkan
-                dari puncak gedung.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                Berjalan-jalan di Central Park, oase hijau di tengah hiruk-pikuk
-                kota.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                Saksikan pertunjukan Broadway yang memukau di distrik teater
-                terbaik dunia.
-              </li>
-              <li class=" wow animate__animated animate__fadeInRight">
-                Nikmati kuliner di Times Square yang selalu hidup, siang dan
-                malam.
-              </li>
-            </ol>
+          <div class="card" data-idcard="2">
+            <div class="wrapper-img">
+              <img src="{{ asset('files/img/index/broadway.webp') }}" alt="Liberty">
+            </div>
+            <div class="title">
+              <h3>Broadway</h3>
+            </div>
+            <div class="desc">
+              <p>Broadway adalah pusat teater dunia yang terkenal dengan pertunjukan musikal dan drama berkualitas
+                tinggi. Suasana semarak dengan lampu neon yang menyala di malam hari menjadikan Broadway sebagai
+                destinasi wajib bagi pecinta seni dan budaya.
+              </p>
+            </div>
+          </div>
+          <div class="card card-active" data-idcard="3">
+            <div class="wrapper-img">
+              <img src="{{ asset('files/img/index/central-park.webp') }}" alt="Central Park">
+            </div>
+            <div class="title">
+              <h3>Central Park</h3>
+            </div>
+            <div class="desc">
+              <p>Central Park adalah oasis hijau seluas 341 hektar di tengah Manhattan. Taman ini menawarkan berbagai
+                aktivitas, mulai dari piknik hingga bersepeda, serta pemandangan yang indah. Dengan danau dan jalur
+                setapak, Central Park adalah tempat ideal untuk bersantai dari kesibukan kota.
+              </p>
+            </div>
+          </div>
+          <div class="card" data-idcard="4">
+            <div class="wrapper-img">
+              <img src="{{ asset('files/img/index/empire-state2.webp') }}" alt="Empire State Building">
+            </div>
+            <div class="title">
+              <h3>Empire State Building</h3>
+            </div>
+            <div class="desc">
+              <p>Empire State Building adalah gedung pencakar langit ikonik setinggi 381 meter yang menawarkan dek
+                observasi dengan pemandangan 360 derajat kota New York. Dari ketinggian ini, pengunjung dapat menikmati
+                panorama berbagai landmark terkenal.
+              </p>
+            </div>
+          </div>
+          <div class="card" data-idcard="5">
+            <div class="wrapper-img">
+              <img src="{{ asset('files/img/index/times-square.webp') }}" alt="Times Square">
+            </div>
+            <div class="title">
+              <h3>Times Square</h3>
+            </div>
+            <div class="desc">
+              <p>Times Square adalah pusat kehidupan malam dan hiburan di New York, terkenal dengan lampu neon yang
+                gemerlap dan suasana ramai. Sebagai "Persimpangan Dunia," area ini menawarkan beragam restoran dan toko,
+                serta menjadi lokasi acara besar, seperti perayaan Tahun Baru.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="slider " id="slider">
-        <div class="content c4 video " id="video">
-          <div class="wrapper">
-            <br /><br /><br />
-            <video id="pauseEffect" class="wow animate__animated animate__bounceInLeft" controls
-              src="./files/video/Cinematic Video1.mp4"></video>
-            <h1>The NYC</h1>
-          </div>
+      <div class="content c4 video " id="video">
+        <div class="wrapper">
+          <br /><br /><br />
+          <video id="pauseEffect" class="wow animate__animated animate__bounceInLeft" controls
+            src="./files/video/Cinematic Video1.mp4"></video>
+          <h1>The NYC</h1>
         </div>
+      </div>
     </main>
     <script src="./files/js/index.js"></script>
   </body>

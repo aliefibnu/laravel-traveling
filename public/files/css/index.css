@@ -12,6 +12,10 @@
     src: url("../fonts/league-spartan/LeagueSpartan-Bold.otf")
         format("opentype"); /* Ganti dengan path ke file OTF Anda */
 }
+@font-face {
+    font-family: Hollies; /* Ganti dengan nama font yang Anda inginkan */
+    src: url("../fonts/hollies/HolliesBold-Regular.ttf"); /* Ganti dengan path ke file OTF Anda */
+}
 
 html {
     scroll-behavior: smooth;
@@ -240,41 +244,71 @@ video.bg_home {
 }
 
 /* ! List / Third Content Rule */
-.c3 .left-top .slider {
-    width: 40vw;
-    height: 60vh;
+.c3 .c3-center {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+}
+.c3 .card {
+    float: left;
+    min-width: 300px;
+    min-height: 420px;
+    padding: 20px;
+    background-color: rgba(95, 171, 221, 0.212);
+    scale: 70%;
+    border-radius: 10px;
+    /* box-shadow: 0 0 40px black; */
+    filter: drop-shadow(0 0 40px black);
+    transition: all 0.2s ease-out;
+}
+.card.card-active {
+    scale: 1;
+}
+.card:not(.card-active):hover {
     cursor: pointer;
+    scale: 75%;
+    filter: drop-shadow(0 0 70px black);
 }
-.c3 .left-top .slider.active {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    transform: scale(1);
+.c3 .card .wrapper-img {
+    width: 100%;
+    height: 30%;
 }
-
-.slider .wrapper {
-    margin-left: 10px;
-    margin-right: 10px;
+.c3 .card .wrapper-img img {
+    width: 100%;
 }
-
-.slider .wrapper img {
-    user-select: none;
-    max-height: 48vh;
-    pointer-events: none;
-}
-
-.slider .wrapper h5 {
+.c3 .card .title h3 {
+    margin-top: 10px;
     text-align: center;
 }
-
-.wrapperRb {
+.c3 .card .desc p {
+    font-family: Hollies;
+    text-align: justify;
     font-size: large;
-    width: 40vw;
+    font-weight: 100;
 }
-
+.c3 .card .div-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c3 .card .div-btn button {
+    width: 100%;
+    padding: 10px;
+    font-weight: 999;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    transition: all 0.3s linear;
+}
+.c3 .card .div-btn button:hover {
+    background-color: transparent;
+    color: #bfc3c8;
+    border: 2px solid #bfc3c8;
+}
 /* !  Video / Fourth Content Rule */
 .c4 {
     align-items: center;

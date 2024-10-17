@@ -30,37 +30,6 @@ document.addEventListener("scroll", () => {
     });
 });
 
-// ! Algoriitma animasi slider gambar
-let slider = document.getElementById("slider");
-let isDown = false;
-let startX, scrollLeft;
-
-slider.addEventListener("mousedown", (e) => {
-    e.preventDefault();
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    slider.classList.add("active");
-});
-
-slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    slider.classList.remove("active");
-});
-
-slider.addEventListener("mouseup", () => {
-    isDown = false;
-    slider.classList.remove("active");
-});
-
-slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 6; //adjust this value to change the speed
-    slider.scrollLeft = scrollLeft - walk;
-});
-
 // ! Animasi element memiliki transisi masuk dan keluar saat terlihat di layar
 const elements = document.querySelectorAll(".animate");
 document.addEventListener("scroll", () => {
@@ -91,3 +60,42 @@ window.onclick = function (e) {
         }
     }
 };
+
+//! Card Area
+let cardWrapper = document.querySelectorAll(".c3-center")[0];
+let cards = document.querySelectorAll(".card");
+
+//? Atur button view details card
+let divBtnView = document.createElement("div");
+divBtnView.classList.add("div-btn");
+let btnView = divBtnView.appendChild(document.createElement("button"));
+let iconsView = btnView.appendChild(document.createElement("i"));
+iconsView.className = "bi bi-eye-fill";
+btnView.appendChild(document.createTextNode(" View More"));
+
+//? Khusus Kartu Yg Center
+cards[2].appendChild(divBtnView);
+
+//? Untuk Setiap Kartu
+cards.forEach((elCard) => {
+    elCard.addEventListener("click", (e) => {
+        cards.forEach((card) => card.classList.remove("card-active"));
+        elCard.classList.add("card-active");
+
+        let activeCardIndex = Array.from(cards).indexOf(elCard);
+        let margin =
+            cardWrapper.getBoundingClientRect().width -
+            (cards.length - 1) * elCard.offsetWidth;
+        let offset =
+            cards[0].offsetWidth * 2 - activeCardIndex * elCard.offsetWidth;
+
+        elCard.appendChild(divBtnView);
+        cardWrapper.style.marginLeft = `${offset}px`;
+    });
+});
+
+//? Global Rule
+document.querySelectorAll(".content-center").forEach((x) => {
+    x.style.marginTop =
+        document.querySelectorAll("header")[0].offsetHeight + "px";
+});

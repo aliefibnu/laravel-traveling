@@ -3,8 +3,9 @@
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BeliTiketController;
 
-//? Route Tiket Pesawat
+//! Route Tiket Pesawat
 Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/tiket_pesawat', [IndexController::class, 'tiket_pesawat'])->name('tiket_pesawat');
@@ -16,7 +17,7 @@ Route::get('/beli_tiket/beta/{id}', [IndexController::class, 'beli_tiket_beta'])
 
 Route::post('/beli_tiket', [IndexController::class, 'beli_tiket_store'])->name('beli_tiket_store');
 
-//? Route Auth
+//! Route Auth
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('login', [AuthController::class, 'login'])->name('login.store');
 
@@ -28,6 +29,16 @@ Route::post('signup', [AuthController::class, 'signUp'])->name('signup.store');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('logout_get', [AuthController::class, 'logout'])->name('logout_get')->middleware('auth');
 
+//! Route Beli Tiket
+//? Menampilkan Form
+Route::get('/beli_tiket/beta/{id}', [BeliTiketController::class, 'detail_pribadi'])->name('beli-tiket.detail-pribadi');
+
+//? Storing Form Data
+Route::post('/beli_tiket/beta/{id}/detail_pribadi', [BeliTiketController::class, 'detail_pribadi_store'])->name('store.beli-tiket.detail-pribadi');
+
+Route::post('/beli_tiket/beta/{id}/detail_penerbangan', [BeliTiketController::class, 'detail_penerbangan_store'])->name('store.beli-tiket.detail-penerbangan');
+
+Route::post('/beli_tiket/beta/{id}/detail_pembayaran', [BeliTiketController::class, 'detail_pembayaran_store'])->name('store.beli-tiket.detail-pembayaran');
 
 
 // Route::post('/sign_up', [UserController::class, 'store'])->name('user_store');
