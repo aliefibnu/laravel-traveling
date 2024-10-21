@@ -14,8 +14,16 @@
     <script src="{{ asset('files/js/function.js') }}"></script>
     <script src="{{ asset('files/lib/wow/wow.min.js') }}"></script>
     <script src="{{ asset('files/js/alert.js') }}"></script>
+    <script src="{{ asset('files/js/data_destinasi.js') }}"></script>
     <script>
       new WOW().init()
+      const panoramaLink = [
+        "{{ asset('files/img/index/liberty.webp') }}",
+        "{{ asset('files/img/index/broadway.webp') }}",
+        "{{ asset('files/img/index/central-park.webp') }}",
+        "{{ asset('files/img/index/empire-state2.webp') }}",
+        "{{ asset('files/img/index/times-square.webp') }}"
+      ]
     </script>
   </head>
 
@@ -107,7 +115,7 @@
       </div>
       <div class="content c3" id="destinasi">
         <div class="c3-center content-center">
-          <div class="card" data-idcard="1">
+          <div class="card">
             <div class="wrapper-img">
               <img src="{{ asset('files/img/index/liberty.webp') }}" alt="Liberty">
             </div>
@@ -115,13 +123,11 @@
               <h3>Patung Liberty</h3>
             </div>
             <div class="desc">
-              <p>Patung Liberty berdiri megah di Pulau Liberty sebagai simbol kebebasan dan harapan. Diberikan oleh
-                Prancis pada tahun 1886, patung ini menawarkan pemandangan indah pelabuhan New York. Pengunjung dapat
-                menjelajahi pulau dan bahkan naik ke mahkota patung untuk menikmati panorama kota.
+              <p>Patung Liberty di Pulau Liberty adalah simbol kebebasan yang diberikan oleh Prancis pada tahun 1886.
               </p>
             </div>
           </div>
-          <div class="card" data-idcard="2">
+          <div class="card">
             <div class="wrapper-img">
               <img src="{{ asset('files/img/index/broadway.webp') }}" alt="Liberty">
             </div>
@@ -129,13 +135,11 @@
               <h3>Broadway</h3>
             </div>
             <div class="desc">
-              <p>Broadway adalah pusat teater dunia yang terkenal dengan pertunjukan musikal dan drama berkualitas
-                tinggi. Suasana semarak dengan lampu neon yang menyala di malam hari menjadikan Broadway sebagai
-                destinasi wajib bagi pecinta seni dan budaya.
-              </p>
+              <p>Broadway adalah pusat teater dunia yang terkenal dengan pertunjukan berkualitas dan lampu neon yang
+                gemerlap.</p>
             </div>
           </div>
-          <div class="card card-active" data-idcard="3">
+          <div class="card card-active">
             <div class="wrapper-img">
               <img src="{{ asset('files/img/index/central-park.webp') }}" alt="Central Park">
             </div>
@@ -143,13 +147,11 @@
               <h3>Central Park</h3>
             </div>
             <div class="desc">
-              <p>Central Park adalah oasis hijau seluas 341 hektar di tengah Manhattan. Taman ini menawarkan berbagai
-                aktivitas, mulai dari piknik hingga bersepeda, serta pemandangan yang indah. Dengan danau dan jalur
-                setapak, Central Park adalah tempat ideal untuk bersantai dari kesibukan kota.
-              </p>
+              <p>Central Park adalah taman seluas 341 hektar di Manhattan, tempat ideal untuk bersantai dan menikmati
+                alam.</p>
             </div>
           </div>
-          <div class="card" data-idcard="4">
+          <div class="card">
             <div class="wrapper-img">
               <img src="{{ asset('files/img/index/empire-state2.webp') }}" alt="Empire State Building">
             </div>
@@ -157,13 +159,10 @@
               <h3>Empire State Building</h3>
             </div>
             <div class="desc">
-              <p>Empire State Building adalah gedung pencakar langit ikonik setinggi 381 meter yang menawarkan dek
-                observasi dengan pemandangan 360 derajat kota New York. Dari ketinggian ini, pengunjung dapat menikmati
-                panorama berbagai landmark terkenal.
-              </p>
+              <p>Empire State Building adalah gedung ikonik setinggi 381 meter dengan dek observasi kota New York.</p>
             </div>
           </div>
-          <div class="card" data-idcard="5">
+          <div class="card">
             <div class="wrapper-img">
               <img src="{{ asset('files/img/index/times-square.webp') }}" alt="Times Square">
             </div>
@@ -171,12 +170,48 @@
               <h3>Times Square</h3>
             </div>
             <div class="desc">
-              <p>Times Square adalah pusat kehidupan malam dan hiburan di New York, terkenal dengan lampu neon yang
-                gemerlap dan suasana ramai. Sebagai "Persimpangan Dunia," area ini menawarkan beragam restoran dan toko,
-                serta menjadi lokasi acara besar, seperti perayaan Tahun Baru.
-              </p>
+              <p>Times Square adalah pusat hiburan New York yang terkenal dengan lampu neon dan suasana meriah.</p>
             </div>
           </div>
+        </div>
+
+      </div>
+      <div class="content popup popup-card" id="popup">
+        <div class="left-top">
+          <div class="wrapperPanorama panoramaPopup">
+          </div>
+          <div class="rating" id="ratingPopup">
+            <b>Rating : </b>
+            <p id="rating"></p>
+          </div>
+        </div>
+        <div class="right-bottom">
+          <div class="close-popup-area">
+            <div class="close-pupup closePupup">&times;</div>
+          </div>
+          <table cellpadding='10' id="tablePopup">
+            <tr>
+              <th colspan="3" id="judulPopup" class="judul-popup"></th>
+            </tr>
+            <tr>
+              <td colspan="3" id="paragrafPopup" class="paragraf"></td>
+            </tr>
+            <tr>
+              <th>Waktu Operasional</th>
+              <td class="equal-cell">:</td>
+              <td id="waktuOperasionalPopup" class="waktu-operasional"></td>
+            </tr>
+            <tr>
+              <th>Saran Waktu</th>
+              <td class="equal-cell">:</td>
+              <td id="saranWaktuPopup" class="saran-waktu"></td>
+            </tr>
+            <tr>
+              <th>Harga</th>
+              <td class="equal-cell">:</td>
+              <td id="hargaPopup" class="harga"></td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="content c4 video " id="video">

@@ -255,7 +255,7 @@ video.bg_home {
 .c3 .card {
     float: left;
     min-width: 300px;
-    min-height: 420px;
+    min-height: min-content;
     padding: 20px;
     background-color: rgba(95, 171, 221, 0.212);
     scale: 70%;
@@ -276,18 +276,25 @@ video.bg_home {
     width: 100%;
     height: 30%;
 }
+
 .c3 .card .wrapper-img img {
     width: 100%;
 }
-.c3 .card .title h3 {
+.c3 .card .title h2 {
     margin-top: 10px;
     text-align: center;
 }
-.c3 .card .desc p {
-    font-family: Hollies;
-    text-align: justify;
-    font-size: large;
-    font-weight: 100;
+.c3 .card li {
+    font-family: "Helios Extended";
+    /* font-size: 90%; */
+}
+.c3 .card b {
+    font-family: "League Spartan";
+    font-size: 90%;
+}
+.card .desc p {
+    font-size: 90%;
+    font-family: "Helios Extended";
 }
 .c3 .card .div-btn {
     width: 100%;
@@ -308,6 +315,101 @@ video.bg_home {
     background-color: transparent;
     color: #bfc3c8;
     border: 2px solid #bfc3c8;
+}
+
+/*! Popup  */
+.popup {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.582);
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    z-index: 30;
+    animation: popupShow 0.5s;
+    border: 0;
+}
+.popup .left-top {
+    flex-direction: column;
+}
+
+.popup .left-top .rating {
+    margin-top: 10px;
+    width: 70%;
+    font-family: "League Spartan";
+}
+.popup .left-top .rating p {
+    display: inline;
+    font-family: "Helios Extended";
+}
+
+.popup .left-top .wrapperPanorama {
+    width: 70%;
+    min-height: 50%;
+    background-color: #162237;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+.popup .right-bottom {
+    position: relative;
+}
+.popup .right-bottom .close-popup-area {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    font-size: 50px;
+    transition: all 0.3s ease-out;
+}
+.popup .right-bottom .close-popup-area:hover {
+    opacity: 0.5;
+}
+@keyframes popupShow {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes popupClose {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+.popup table {
+    max-width: 80%;
+}
+.popup table tbody,
+.popup table tr {
+    width: 100%;
+}
+.popup table tr th.judul-popup {
+    font-size: xx-large;
+}
+.popup table tr th:not(.judul-popup),
+.popup table tr td {
+    text-align: start;
+    vertical-align: top;
+}
+.popup table tr th {
+    font-family: "League Spartan";
+    width: 25%;
+}
+.popup table tr td {
+    filter: drop-shadow(0 0 10px black);
+    font-family: "Helios Extended";
+}
+.popup table tr td.equal-cell {
+    padding: 10px 0;
 }
 /* !  Video / Fourth Content Rule */
 .c4 {

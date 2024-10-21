@@ -96,3 +96,69 @@ function tiketPesawatController(
         changeNavTextColor(elNavigation, id);
     }
 }
+
+//! Popup Area
+/**
+ * @param {URL} panoramaLink
+ * @param {String} judul
+ * @param {String} deskripsi
+ */
+function settingPopupElement(
+    panoramaLink,
+    rating,
+    judul,
+    deskripsi,
+    saranWaktu,
+    harga,
+    waktuOperasional
+) {
+    const elPanorama = document.querySelectorAll(".panoramaPopup")[0];
+    const elJudulPopup = document.getElementById("judulPopup");
+    const elParagrafPopup = document.getElementById("paragrafPopup");
+    const elSaranWaktu = document.getElementById("saranWaktuPopup");
+    const elWaktuOperasional = document.getElementById("waktuOperasionalPopup");
+    const elHarga = document.getElementById("hargaPopup");
+    const elRating = document.getElementById("rating");
+    let textBintang = "";
+    let rat = rating;
+    while (textBintang.length < 5) {
+        if (rat > 1) {
+            textBintang += "★";
+            rat = rat - 1;
+        } else if (rat < 1 && rat >= 0.5) {
+            textBintang += "✫";
+            rat = 0;
+        } else if (rat < 1 && rat > 0 && rat <= 0.5) {
+            textBintang += "☆";
+            rat = 0;
+        } else {
+            textBintang += "☆";
+        }
+    }
+    elPanorama.style.backgroundImage = `url(${panoramaLink})`;
+    elRating.innerText = `${textBintang} (${rating} / 5)`;
+    elJudulPopup.textContent = judul;
+    elParagrafPopup.textContent = deskripsi;
+    elSaranWaktu.textContent = saranWaktu;
+    elHarga.textContent = harga;
+    elWaktuOperasional.textContent = waktuOperasional;
+}
+
+function showPopup() {
+    let elPopup = document.getElementById("popup");
+    elPopup.style.animation = "popupShow .5s";
+    elPopup.style.display = "flex";
+    document.body.style.overflowY = "hidden";
+    document.getElementById("tablePopup").style.marginTop = `-${
+        document.getElementById("ratingPopup").offsetHeight * 2
+    }px`;
+}
+
+function closePopup() {
+    let elPopup = document.getElementById("popup");
+    elPopup.style.animation = "popupClose .5s";
+    document.body.style.overflowY = "auto";
+    setTimeout(() => {
+        elPopup.style.display = "none";
+    }, 500);
+}

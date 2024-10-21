@@ -26,7 +26,6 @@ document.addEventListener("scroll", () => {
         if (!isVisible && !video.paused) {
             element.pause();
         }
-        // console.log(videoRect+isVisible)
     });
 });
 
@@ -61,6 +60,13 @@ window.onclick = function (e) {
     }
 };
 
+//! Popup
+
+let closeBtn = document.querySelectorAll(".closePupup")[0];
+closeBtn.addEventListener("click", (x) => {
+    closePopup();
+});
+
 //! Card Area
 let cardWrapper = document.querySelectorAll(".c3-center")[0];
 let cards = document.querySelectorAll(".card");
@@ -75,6 +81,9 @@ btnView.appendChild(document.createTextNode(" View More"));
 
 //? Khusus Kartu Yg Center
 cards[2].appendChild(divBtnView);
+divBtnView.addEventListener("click", (e) => {
+    showPopup();
+});
 
 //? Untuk Setiap Kartu
 cards.forEach((elCard) => {
@@ -83,14 +92,20 @@ cards.forEach((elCard) => {
         elCard.classList.add("card-active");
 
         let activeCardIndex = Array.from(cards).indexOf(elCard);
-        let margin =
-            cardWrapper.getBoundingClientRect().width -
-            (cards.length - 1) * elCard.offsetWidth;
         let offset =
             cards[0].offsetWidth * 2 - activeCardIndex * elCard.offsetWidth;
 
         elCard.appendChild(divBtnView);
         cardWrapper.style.marginLeft = `${offset}px`;
+        settingPopupElement(
+            panoramaLink[activeCardIndex],
+            dataDestinasi[activeCardIndex].rating_number,
+            dataDestinasi[activeCardIndex].judul,
+            dataDestinasi[activeCardIndex].deskripsi,
+            dataDestinasi[activeCardIndex].saran_waktu,
+            dataDestinasi[activeCardIndex].harga,
+            dataDestinasi[activeCardIndex].waktu_operasional
+        );
     });
 });
 
@@ -99,3 +114,15 @@ document.querySelectorAll(".content-center").forEach((x) => {
     x.style.marginTop =
         document.querySelectorAll("header")[0].offsetHeight + "px";
 });
+let activeCardIndex = Array.from(cards).findIndex((card) =>
+    card.classList.contains("card-active")
+);
+settingPopupElement(
+    panoramaLink[activeCardIndex],
+    dataDestinasi[activeCardIndex].rating_number,
+    dataDestinasi[activeCardIndex].judul,
+    dataDestinasi[activeCardIndex].deskripsi,
+    dataDestinasi[activeCardIndex].saran_waktu,
+    dataDestinasi[activeCardIndex].harga,
+    dataDestinasi[activeCardIndex].waktu_operasional
+);
