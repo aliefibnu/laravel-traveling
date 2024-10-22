@@ -2,8 +2,6 @@
 
 ### Author: Alief Ibnu
 
-### Active Link: [traveling-alief.vercel.app](https://traveling-alief.vercel.app)
-
 ## 1. Deskripsi Singkat Saya
 
 Hello guys, saya Alief Ibnu H. Saya adalah siswa SMK Negri 7 Batam yang memiliki minat dan bakat di bidang pengembangan perangkat lunak dan game. Saya sedang mengembangkan aplikasi traveling menggunakan Laravel sebagai bagian dari tugas dan proyek saya.
