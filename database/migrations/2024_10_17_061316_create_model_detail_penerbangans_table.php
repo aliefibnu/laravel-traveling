@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('detail_penerbangan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->integer('id_maskapai');
+            $table->unsignedBigInteger('id_maskapai');
             $table->string('atas_nama');
             $table->enum('jenis_pembayaran', ['VA BRI', 'VA BCA', 'VA Mandiri', 'Paypal', 'Dana', 'Qris', 'American Express']);
             $table->timestamps();

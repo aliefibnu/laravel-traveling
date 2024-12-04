@@ -1,0 +1,43 @@
+@media only screen and (max-width: 768px) {
+    .sideNav {
+        transform: translateX(-100%);
+        min-width: 50vw;
+        z-index: 3;
+        transition: all 0.3s ease;
+        background-color: rgba(22, 34, 55, 0.95);
+        padding: 0 20px 0 20px;
+    }
+    nav .bottomNav a p {
+        margin: 30px 0;
+    }
+    nav .bottomNav p.navActive {
+        transform: translateX(-10px);
+    }
+    .sideNav.mobileActive {
+        transform: translateX(0);
+    }
+    main.main {
+        margin-left: 0;
+        width: 100vw;
+    }
+    .main .wrapperTable {
+        width: 90vw;
+    }
+    body .header {
+        margin-left: 0;
+        width: 100vw;
+    }
+    body .header header {
+        width: 90vw;
+        /* font-size: small; */
+    }
+    #headerIcon {
+        display: inline;
+    }
+    #headerIcon.active::before {
+        content: "\f474";
+    }
+    .cTable table {
+        width: 150%;
+    }
+}

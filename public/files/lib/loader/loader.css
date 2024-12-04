@@ -1,0 +1,144 @@
+.loader-wrapper {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+    z-index: 99;
+}
+.loader-wrapper .loader {
+    width: 90px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 64px;
+    aspect-ratio: 1;
+    background: radial-gradient(
+            farthest-side at bottom right,
+            #f10c49 90%,
+            #0000
+        ),
+        radial-gradient(farthest-side at bottom left, #f10c49 90%, #0000),
+        radial-gradient(farthest-side at top right, #f10c49 90%, #0000),
+        radial-gradient(farthest-side at top left, #f10c49 90%, #0000),
+        radial-gradient(farthest-side at bottom right, #f4dd51 90%, #0000),
+        radial-gradient(farthest-side at bottom left, #f4dd51 90%, #0000),
+        radial-gradient(farthest-side at top right, #f4dd51 90%, #0000),
+        radial-gradient(farthest-side at top left, #f4dd51 90%, #0000),
+        radial-gradient(farthest-side at bottom right, #e3aad6 90%, #0000),
+        radial-gradient(farthest-side at bottom left, #e3aad6 90%, #0000),
+        radial-gradient(farthest-side at top right, #e3aad6 90%, #0000),
+        radial-gradient(farthest-side at top left, #e3aad6 90%, #0000);
+    background-size: 25% 25%;
+    background-repeat: no-repeat;
+    animation: l16 2s infinite;
+}
+@keyframes l16 {
+    0% {
+        background-position: calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3);
+    }
+    16.67% {
+        background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3);
+    }
+    33.33% {
+        background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3),
+            calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3);
+    }
+    50% {
+        background-position: calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3),
+            calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3),
+            calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+    }
+    66.67% {
+        background-position: calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3),
+            calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+    }
+    83.33% {
+        background-position: calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(0 * 100% / 3) calc(0 * 100% / 3),
+            calc(3 * 100% / 3) calc(0 * 100% / 3),
+            calc(0 * 100% / 3) calc(3 * 100% / 3),
+            calc(3 * 100% / 3) calc(3 * 100% / 3);
+    }
+    100% {
+        background-position: calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3),
+            calc(1 * 100% / 3) calc(1 * 100% / 3),
+            calc(2 * 100% / 3) calc(1 * 100% / 3),
+            calc(1 * 100% / 3) calc(2 * 100% / 3),
+            calc(2 * 100% / 3) calc(2 * 100% / 3);
+    }
+}

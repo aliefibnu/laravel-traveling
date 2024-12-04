@@ -5,18 +5,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <title>Cek Tiket Pesawat</title>
-    <script src="{{ asset('files/lib/fontawesome-free-6.6.0-web/js/all.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('files/lib/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('files/css/tiket_pesawat.css') }}" />
+    <link rel="stylesheet" href="{{ asset('files/css/tiket_pesawat_responsive.css') }}">
   </head>
 
   <body>
+    <div class="loader-wrapper" id="loaderWrapper">
+      <link rel="stylesheet" href="{{ asset('files/lib/loader/loader.css') }}">
+      <script src="{{ asset('files/lib/loader/loader.js') }}"></script>
+      <div class="loader"></div>
+    </div>
     <div class="header">
       <header>
-        <h1 id="headerText">{{ $headerText }}</h1>
+        <h1 id="headerText">
+          <i class="bi bi-list" id="headerIcon"></i>
+          <i class="bi bi-list-nested" id="headerIconOpened"></i>
+          {{ $headerText }}
+        </h1>
       </header>
     </div>
-    <nav class="sideNav">
+    <nav class="sideNav" id="sideNav">
       <x-tiket-pesawat.side-nav class="side-nav" :page="$page"></x-tiket-pesawat>
     </nav>
     <main class="main">
@@ -47,6 +58,7 @@
         @endif
       </div>
     </main>
+    <script src="{{ asset('files/js/tiket_pesawat.js') }}"></script>
   </body>
 
 </html>

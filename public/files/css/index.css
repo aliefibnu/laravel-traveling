@@ -2,6 +2,7 @@
 :root {
     --background-color: #162237;
     --text-color: #bfc3c8;
+    --bg-footer: #2d3b5e;
 }
 @font-face {
     font-family: "Helios Extended"; /* Ganti dengan nama font yang Anda inginkan */
@@ -19,6 +20,9 @@
 
 html {
     scroll-behavior: smooth;
+}
+body {
+    transition: all 0.3s ease;
 }
 h1,
 h2,
@@ -95,20 +99,17 @@ body {
     }
 }
 
-/* ! Header Css Rule */
+/* ! Header Desktop Css Rule */
 header {
     opacity: 0.5;
     transition: all linear 0.3s;
     position: sticky;
+    z-index: 20;
     top: 0;
     display: flex;
     flex-direction: row;
     width: 100vw;
     justify-content: space-between;
-    left: 25vw;
-    /* border-radius: 0px 0px 20px 20px; */
-    /* border: 1px solid rgba(255, 255, 255, 0.3); */
-    /* From https://css.glass */
     background: rgba(0, 0, 0, 0.541);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -118,7 +119,8 @@ header:hover {
     opacity: 1;
 }
 header .left,
-header .right {
+header .right,
+header .mobile-hamburger {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -176,40 +178,25 @@ header .right {
     display: block;
 }
 /* ! Home / Landing screen Css Rule */
-#home {
-    overflow: hidden;
-    opacity: 1;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+
+.c1 {
+    display: grid;
     justify-content: center;
-    flex-direction: column;
-    font-size: 5rem;
+    align-items: center;
     color: rgba(240, 248, 255, 0.637);
     transition: linear 0.5s;
+    font-size: 4rem;
 }
-
-video.bg_home {
-    position: absolute;
+.c1 video.bg_home {
+    z-index: -1;
+    grid-area: 1 / 1 / -1 / -1;
+    min-height: 100vh;
     min-width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* Agar video menyesuaikan dengan ukuran div */
-    z-index: -1; /* Video di belakang konten */
 }
-
-.judul {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.judul h1 {
+.c1 .judul {
     text-align: center;
+    grid-area: 1 / 1 / -1 / -1;
 }
-
 /* ! Detail / Seccond Content Rule */
 .mediaImgSelengkapnya {
     height: 60vh;
@@ -217,6 +204,9 @@ video.bg_home {
     background: url(../img/index/bg.png);
     background-size: cover;
     background-position: center;
+    border-radius: 100px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 .c2 .right-bottom {
     margin-top: -5%;
@@ -245,31 +235,27 @@ video.bg_home {
 
 /* ! List / Third Content Rule */
 .c3 .c3-center {
-    width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     transition: all 0.5s ease-out;
+    gap: 40px;
 }
 .c3 .card {
     float: left;
-    min-width: 300px;
-    min-height: min-content;
+    width: 300px;
+    height: min-content;
     padding: 20px;
     background-color: rgba(95, 171, 221, 0.212);
-    scale: 70%;
     border-radius: 10px;
-    /* box-shadow: 0 0 40px black; */
     filter: drop-shadow(0 0 40px black);
     transition: all 0.2s ease-out;
+    opacity: 0.5;
 }
-.card.card-active {
-    scale: 1;
-}
-.card:not(.card-active):hover {
+.card:hover {
+    opacity: 1;
     cursor: pointer;
-    scale: 75%;
+    transform: scale(1.07);
     filter: drop-shadow(0 0 70px black);
 }
 .c3 .card .wrapper-img {
@@ -329,6 +315,9 @@ video.bg_home {
     animation: popupShow 0.5s;
     border: 0;
 }
+.popup .right-bottom {
+    position: relative;
+}
 .popup .left-top {
     flex-direction: column;
 }
@@ -350,9 +339,6 @@ video.bg_home {
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-}
-.popup .right-bottom {
-    position: relative;
 }
 .popup .right-bottom .close-popup-area {
     position: absolute;
@@ -418,7 +404,6 @@ video.bg_home {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .video .wrapper {
@@ -452,4 +437,72 @@ video.bg_home {
     width: 40vw;
 }
 
-/* !  Table / Fifth Content Rule */
+/*! Footer / Fifth Content Rule */
+footer {
+    width: 100vw;
+    height: auto;
+    padding: 20px 0 30px 0;
+    background-color: var(--bg-footer);
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: row;
+    font-family: "Helios Extended";
+}
+.footer .left-top {
+    flex-direction: column;
+    padding: 0 50px 0 0;
+    height: 100%;
+    max-width: 60%;
+}
+.footer .left-top .footer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: smaller;
+    color: var(--text-color);
+}
+.footer .left-top .footer-header img {
+    margin-top: -5%;
+    margin-right: 10px;
+}
+.footer .right-bottom {
+    height: auto;
+    width: auto;
+}
+.footer .right-bottom .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.footer .right-bottom h3 {
+    font-size: medium;
+}
+.footer .right-bottom a {
+    color: rgba(245, 245, 245, 0.397);
+    text-decoration: none;
+}
+.footer .right-bottom a:hover {
+    color: rgb(245, 245, 245);
+}
+.footer .turbine {
+    max-width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .turbine img {
+    width: 60%;
+    animation: animasi_turbin 0.1s linear infinite reverse;
+}
+@keyframes animasi_turbin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

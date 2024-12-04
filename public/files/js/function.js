@@ -20,7 +20,6 @@ function updateSizeJudul() {
             }
         }, 500);
     }
-    // document.title = window.scrollY;
 }
 
 // ! Tiket Pesawat Area
@@ -112,7 +111,7 @@ function settingPopupElement(
     harga,
     waktuOperasional
 ) {
-    const elPanorama = document.querySelectorAll(".panoramaPopup")[0];
+    const elPanorama = document.getElementById("panoramaPopup");
     const elJudulPopup = document.getElementById("judulPopup");
     const elParagrafPopup = document.getElementById("paragrafPopup");
     const elSaranWaktu = document.getElementById("saranWaktuPopup");
@@ -143,7 +142,6 @@ function settingPopupElement(
     elHarga.textContent = harga;
     elWaktuOperasional.textContent = waktuOperasional;
 }
-
 function showPopup() {
     let elPopup = document.getElementById("popup");
     elPopup.style.animation = "popupShow .5s";
@@ -161,4 +159,54 @@ function closePopup() {
     setTimeout(() => {
         elPopup.style.display = "none";
     }, 500);
+}
+
+//! Navbar Section
+function navbarOpen() {
+    document.getElementById("sideNav").classList.add("nav-active");
+    document.getElementById("coverForSideNav").classList.add("opened");
+}
+function navbarClose() {
+    document.getElementById("sideNav").classList.remove("nav-active");
+    document.getElementById("coverForSideNav").classList.remove("opened");
+}
+function isSideNavActive() {
+    return document.getElementById("sideNav").classList.contains("nav-active");
+}
+function isMobileDropdownActive() {
+    return document
+        .getElementById("dropDownContentMobile")
+        .classList.contains("show");
+}
+
+//! Carding dengan locomotive scroll
+function cardingScroll() {
+    function updateScroll() {
+        const container = document.getElementById("destinasi");
+        const cards = gsap.utils.toArray(".c3 .card");
+        const wrapperCards = document.getElementById("c3Center");
+        wrapperCards.style.marginLeft =
+            window.innerWidth - cards[0].offsetWidth + "px";
+
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+        gsap.to(wrapperCards, {
+            x: -(
+                wrapperCards.offsetWidth +
+                window.innerWidth -
+                cards[0].offsetWidth * 2
+            ),
+            ease: "none",
+            scrollTrigger: {
+                trigger: container,
+                start: "top top",
+                pin: true,
+                end: () => `+=${wrapperCards.offsetWidth - window.innerWidth}`,
+                scrub: 1,
+            },
+        });
+    }
+
+    updateScroll();
+    window.addEventListener("resize", updateScroll);
 }

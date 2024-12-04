@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('detail_pribadi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->integer('id_maskapai');
+            $table->unsignedBigInteger('id_maskapai');
             $table->string('name');
             $table->string('email');
             $table->string('phone');

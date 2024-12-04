@@ -17,7 +17,7 @@ class IndexController extends Controller
     }
     public function tiket_pesawat()
     {
-        $headerText = "Lihat Maskapai Tersedia (Tabel 1)";
+        $headerText = "Lihat Maskapai Tersedia";
         $maskapai = ModelMaskapai::all();
         $page = 'maskapai';
         return view('tiket_pesawat', compact(
@@ -26,26 +26,26 @@ class IndexController extends Controller
             'headerText'
         ));
     }
-    public function tiket_pesawat_show($id)
+    public function tiket_pesawat_show($slug)
     {
-        if ($id == 1) {
-            $headerText = "Lihat Maskapai Tersedia (Tabel 1)";
+        if ($slug == "lihat_maskapai") {
+            $headerText = "Lihat Maskapai Tersedia";
             $page = 'maskapai';
             $maskapai = ModelMaskapai::all();
             return view('tiket_pesawat', ['maskapai' => $maskapai, 'page' => $page, 'headerText' => $headerText]);
-        } else if ($id == 2) {
-            $headerText = "Cek Harga Tiket (Table 2)";
+        } else if ($slug == "cek_harga_tiket") {
+            $headerText = "Cek Harga Tiket";
             $page = 'hargaTiket';
             $hargaTiket = ModelHargaTiket::with('maskapai')->get();
             $usdToIdr = 15670;
             return view('tiket_pesawat', ['hargaTiket' => $hargaTiket, 'usdToIdr' => $usdToIdr, 'page' => $page, 'headerText' => $headerText]);
-        } else if ($id == 3) {
-            $headerText = "Beli Tiket Sekarang (Table 3)";
+        } else if ($slug == "table_beli") {
+            $headerText = "Beli Tiket Sekarang";
             $page = 'beli';
             $maskapai = ModelMaskapai::all();
             return view('tiket_pesawat', ['maskapai' => $maskapai, 'page' => $page, 'headerText' => $headerText]);
-        } else if ($id == 4) {
-            $headerText = "Cek Durasi Penerbangan (Table 4)";
+        } else if ($slug == "cek_durasi") {
+            $headerText = "Cek Durasi Penerbangan";
             $page = 'durasi';
             $durasi = ModelDurasi::with('maskapai')->get();
             return view('tiket_pesawat', ['durasi' => $durasi, 'page' => $page, 'headerText' => $headerText]);
@@ -74,12 +74,13 @@ class IndexController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|ascii',
+            'jumlah_tiket' => 'required|numeric',
             'tempat_lahir' => 'required|ascii',
             'tanggal_lahir' => 'required|date',
             'email' => 'required|email:dns',
             'gender' => 'required|in:pria,wanita',
             'alamat' => 'required|max:150',
-            'kota' => 'required|in:palembang,batam,tanjung_pinang,bintan,jakarta,new_york,bandung,medan,kalimantan'
+            'kota' => 'required|in:palembang,batam,tanjung_pinang,bintan,jakarta,new_york,bandung,medan,kalimantan',
         ]);
         $data = "<h1>Info Data Diri Kamu Berdasarkan Form !</h1>";
         $data .= "\n<ul style='font-family:arial;'>";
@@ -88,5 +89,9 @@ class IndexController extends Controller
         }
         $data .= "\n</ul>";
         return $data;
+    }
+    public function test_slug($slug)
+    {
+        return dd($slug);
     }
 }
