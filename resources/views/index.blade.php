@@ -190,7 +190,7 @@
             <div class="wrapper-img">
               <img src="{{ asset('files/img/index/liberty.webp') }}" alt="Liberty" />
             </div>
-            <div class="title">
+            <div class="title">test
               <h3>Patung Liberty</h3>
             </div>
             <div class="desc">
